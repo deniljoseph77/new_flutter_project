@@ -6,7 +6,6 @@ import 'package:new_flutter_project/music_player/Music_Login.dart';
 import 'package:new_flutter_project/music_player/music_search.dart';
 
 import 'music_Playlist.dart';
-import 'music_settings.dart';
 
 class Music_home extends StatefulWidget {
   @override
@@ -15,7 +14,7 @@ class Music_home extends StatefulWidget {
 
 class _Music_homeState extends State<Music_home> {
   var index = 0;
-  var pages = [Music_search(),MusicLibraryScreen()];
+  var pages = [Music_search(), MusicLibraryScreen()];
 
   var genre = [
     "Music",
@@ -76,9 +75,21 @@ class _Music_homeState extends State<Music_home> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: (){}, icon:Icon(Icons.more_vert,color: Colors.blueAccent,))
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.more_vert,
+                color: Colors.blueAccent,
+              ))
         ],
-        leading: IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.music,size: 30,),color: Colors.blueGrey,),
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            FontAwesomeIcons.music,
+            size: 30,
+          ),
+          color: Colors.blueGrey,
+        ),
         backgroundColor: Colors.black,
         title: Text(
           "JukeBox",
@@ -245,13 +256,15 @@ class _Music_homeState extends State<Music_home> {
             } else if (index == 1) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Music_search()));
-            }else if (index == 2) {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MusicLibraryScreen()));
-             // }else if (index == 3) {
-             //   Navigator.push(context,
-             //       MaterialPageRoute(builder: (context) => Music_settings()));
-             }
+            } else if (index == 2) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MusicLibraryScreen()));
+              // }else if (index == 3) {
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => Music_settings()));
+            }
           });
         },
       ),
