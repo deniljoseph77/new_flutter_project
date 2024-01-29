@@ -6,7 +6,8 @@ import 'package:lottie/lottie.dart';
 import 'Music_home.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Music_splash()));
+  runApp(MaterialApp(theme:ThemeData(),debugShowCheckedModeBanner: false,
+      home: Music_splash()));
 }
 
 class Music_splash extends StatefulWidget {
@@ -17,7 +18,7 @@ class Music_splash extends StatefulWidget {
 class _Music_splashState extends State<Music_splash> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Music_home()));
     });

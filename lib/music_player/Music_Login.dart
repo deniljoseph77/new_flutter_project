@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class Music_Login extends StatefulWidget {
-
-
-  @override
-  State<Music_Login> createState() => _Music_LoginState();
-}
-
-class _Music_LoginState extends State<Music_Login> {
+class Music_Playlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            "Library",
+            style:GoogleFonts.bebasNeue(color: Colors.grey,
+                fontSize: 40,
+                letterSpacing: 3,
+                fontWeight: FontWeight.bold)
+        ),
+      ),
+      body:Center(),
+    );
   }
 }

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'Music_home.dart';
+import 'music_Playlist.dart';
+import 'music_settings.dart';
 
 
 
@@ -67,15 +69,16 @@ class _Music_searchState extends State<Music_search> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Container(
           padding: EdgeInsets.only(left: 10, right: 10, top: 10),
           child: TextField(
             decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.white,
-                prefixIcon: Icon(Icons.search),
+                fillColor: Colors.black,
+                prefixIcon: Icon(Icons.search,color: Colors.white,),
                 hintText: "What do you want to listen to",
-                hintStyle: TextStyle(color: Colors.black)),
+                hintStyle: TextStyle(color: Colors.white)),
           ),
         ),
       ),
@@ -137,28 +140,28 @@ class _Music_searchState extends State<Music_search> {
               backgroundColor: Colors.black,
               icon: Icon(
                 FontAwesomeIcons.house,
-                color: Colors.purpleAccent,
+                color: Colors.blueAccent,
               ),
               label: ""),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(
                 FontAwesomeIcons.magnifyingGlass,
-                color: Colors.purpleAccent,
+                color: Colors.blueAccent,
               ),
               label: ""),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(
                 FontAwesomeIcons.plus,
-                color: Colors.purpleAccent,
+                color: Colors.blueAccent,
               ),
               label: ""),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(
                 FontAwesomeIcons.ellipsis,
-                color: Colors.purpleAccent,
+                color: Colors.blueAccent,
               ),
               label: ""),
         ],
@@ -171,6 +174,12 @@ class _Music_searchState extends State<Music_search> {
             } else if (index == 1) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Music_search()));
+            }else if (index == 2) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MusicLibraryScreen()));
+            }else if (index == 3) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Music_settings()));
             }
           });
         },
