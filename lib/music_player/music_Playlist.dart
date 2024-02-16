@@ -25,6 +25,12 @@ class _MusicLibraryScreenState extends State<MusicLibraryScreen> {
             onPressed: () {
             },
           ),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.more_vert,
+                color: Colors.blueAccent,
+              ))
         ],
         backgroundColor:Colors.black ,
       ),backgroundColor: Colors.black,
@@ -145,6 +151,7 @@ class _MusicLibraryScreenState extends State<MusicLibraryScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         currentIndex: index,
         elevation: 0,
         iconSize: 30,
@@ -170,13 +177,13 @@ class _MusicLibraryScreenState extends State<MusicLibraryScreen> {
               color: Colors.blueAccent,
             ),
             label: ""),
-        BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(
-              FontAwesomeIcons.ellipsis,
-              color: Colors.blueAccent,
-            ),
-            label: ""),
+        // BottomNavigationBarItem(
+        //     backgroundColor: Colors.black,
+        //     icon: Icon(
+        //       FontAwesomeIcons.ellipsis,
+        //       color: Colors.blueAccent,
+        //     ),
+        //     label: ""),
         ],
         onTap: (tapIndex) {setState(() {
           index = tapIndex;
@@ -189,9 +196,9 @@ class _MusicLibraryScreenState extends State<MusicLibraryScreen> {
           }else if (index == 2) {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MusicLibraryScreen()));
-          }else if (index == 3) {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Music_settings()));
+          // }else if (index == 3) {
+          //   Navigator.push(context,
+          //       MaterialPageRoute(builder: (context) => Music_settings()));
           }
         });
         },

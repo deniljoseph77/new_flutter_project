@@ -6,6 +6,7 @@ import 'package:new_flutter_project/music_player/Music_Login.dart';
 import 'package:new_flutter_project/music_player/music_search.dart';
 
 import 'music_Playlist.dart';
+import 'music_settings.dart';
 
 class Music_home extends StatefulWidget {
   @override
@@ -66,30 +67,32 @@ class _Music_homeState extends State<Music_home> {
     FontAwesomeIcons.house,
     FontAwesomeIcons.magnifyingGlass,
     FontAwesomeIcons.plus,
-    FontAwesomeIcons.ellipsis,
+    // FontAwesomeIcons.ellipsis,
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.black,
       appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
-                color: Colors.blueAccent,
-              ))
-        ],
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            FontAwesomeIcons.music,
-            size: 30,
-          ),
-          color: Colors.blueGrey,
-        ),
+        iconTheme: IconThemeData(color: Colors.blueAccent),
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {},
+        //       icon: Icon(
+        //         Icons.more_vert,
+        //         color: Colors.blueAccent,
+        //       ))
+        // ],
+        // leading: IconButton(
+        //   onPressed: () {},
+        //   icon: Icon(
+        //     FontAwesomeIcons.music,
+        //     size: 30,
+        //   ),
+        //   color: Colors.blueGrey,
+        // ),
         backgroundColor: Colors.black,
         title: Text(
           "JukeBox",
@@ -98,6 +101,27 @@ class _Music_homeState extends State<Music_home> {
               fontSize: 40,
               letterSpacing: 3,
               fontWeight: FontWeight.bold),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/mush.jpg"),
+                ),
+                accountName: Text("Zion"),
+                accountEmail: Text("Zion@gmail.com")),
+            ListTile(
+              leading: Icon(Icons.person,color: Colors.grey,),
+              title: Text("Profile",style: TextStyle( color: Colors.grey),),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings,color: Colors.grey),
+              title: Text("Settings",style: TextStyle(color: Colors.grey   ),),
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -197,14 +221,6 @@ class _Music_homeState extends State<Music_home> {
                             Icons.star_border,
                             color: Colors.blueAccent,
                           )),
-                      IconButton(
-                        highlightColor: Colors.purple,
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.download,
-                          color: Colors.blueAccent,
-                        ),
-                      ),
                     ],
                   ),
                 );
@@ -214,6 +230,7 @@ class _Music_homeState extends State<Music_home> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         currentIndex: index,
         elevation: 0,
         iconSize: 30,
@@ -239,13 +256,6 @@ class _Music_homeState extends State<Music_home> {
                 color: Colors.blueAccent,
               ),
               label: ""),
-          BottomNavigationBarItem(
-              backgroundColor: Colors.black,
-              icon: Icon(
-                FontAwesomeIcons.ellipsis,
-                color: Colors.blueAccent,
-              ),
-              label: ""),
         ],
         onTap: (tapIndex) {
           setState(() {
@@ -261,9 +271,9 @@ class _Music_homeState extends State<Music_home> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => MusicLibraryScreen()));
-              // }else if (index == 3) {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => Music_settings()));
+            } else if (index == 3) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Music_settings()));
             }
           });
         },

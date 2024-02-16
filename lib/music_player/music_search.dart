@@ -80,7 +80,9 @@ class _Music_searchState extends State<Music_search> {
                 hintText: "What do you want to listen to",
                 hintStyle: TextStyle(color: Colors.white)),
           ),
+
         ),
+
       ),
       body: GridView.count(
         childAspectRatio: 1.7,
@@ -132,6 +134,7 @@ class _Music_searchState extends State<Music_search> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         currentIndex: index,
         elevation: 0,
         iconSize: 30,
@@ -157,13 +160,13 @@ class _Music_searchState extends State<Music_search> {
                 color: Colors.blueAccent,
               ),
               label: ""),
-          BottomNavigationBarItem(
-              backgroundColor: Colors.black,
-              icon: Icon(
-                FontAwesomeIcons.ellipsis,
-                color: Colors.blueAccent,
-              ),
-              label: ""),
+          // BottomNavigationBarItem(
+          //     backgroundColor: Colors.black,
+          //     icon: Icon(
+          //       FontAwesomeIcons.ellipsis,
+          //       color: Colors.blueAccent,
+          //     ),
+          //     label: ""),
         ],
         onTap: (tapIndex) {
           setState(() {
@@ -177,9 +180,9 @@ class _Music_searchState extends State<Music_search> {
             }else if (index == 2) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MusicLibraryScreen()));
-            }else if (index == 3) {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Music_settings()));
+            // }else if (index == 3) {
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context) => Music_settings()));
             }
           });
         },
